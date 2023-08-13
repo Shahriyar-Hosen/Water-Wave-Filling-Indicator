@@ -12,7 +12,7 @@ const Home = () => {
   };
 
   const indicatorStyle: React.CSSProperties = {
-    "--completion": `${completion}%`,
+    ["--completion" as string]: `${completion}%`,
   };
 
   return (
