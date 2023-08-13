@@ -1,0 +1,48 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 40vh;
+}
+.indicator {
+  height: 20vh;
+  width: 20vh;
+  position: relative;
+  border-radius: 50%;
+  border: 4px double white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  margin-bottom: 30px;
+}
+output {
+  z-index: 1;
+  font-family: system-ui;
+  font-size: 10vh;
+  color: #333;
+}
+.indicator::after {
+  display: block;
+  width: 40vh;
+  height: 40vh;
+  content: "";
+  background-color: #a4eafd;
+  border-radius: 15vh;
+  position: absolute;
+  left: 50%;
+  top: calc(100% - var(--completion) + var(--offset));
+  translate: -50% 0;
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    rotate: 360deg;
+  }
+}
